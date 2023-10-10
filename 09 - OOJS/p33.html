@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Super key</h3>
+
+    <script>
+        class Company {
+            constructor(x,y) {
+                this.empId = x;
+                this.empDes = y;
+            }
+
+            getEmpInfo() {
+                document.write(`<h1> Employee id = ${this.empId} and Designation = ${this.empDes} </h1>`);
+            }
+        }
+
+        class Emp extends Company {
+            constructor(na,em,id,de) {
+                super(id,de);
+                this.name = na;
+                this.email = em;
+            }
+
+            getEmpInfo() {
+                super.getEmpInfo();
+                document.write(`<h1> Name is = ${this.name} and Email = ${this.email} </h1>`);
+            }
+        }
+
+        let x = new Emp("Preeti","preeti@gmail.com",1,"Student");
+        document.write(`<h1> ${x.getEmpInfo()} </h1>`);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Functions</h3>
+    
+
+    <script>
+
+        //getName(), get_name(), (get-name() -> dont use), get_my_getMyName()
+        //function name(params){
+
+        //}
+
+        //name(param value); - direct call
+        /*
+            1. call by value - direct call
+            2. call by ref (indirect call) not apllicable in js
+        */
+
+        var x = 123;
+
+        function display(name) {
+            document.write(`<h1> Welcome to Function = ${name} </h1>`);
+        }
+
+        //direct call
+        display("javascript");
+        display(); //undefined - param or its like a unknown
+        display(""); //empty value
+        display(null); //null
+
+        function product(x,y){
+            document.write(`<h1> product = ${x * y} </h1>`);
+        }
+
+        product(12,30);
+        product(3,4);
+
+        // (a+b)2(sqr)-2ab
+        function exp1(a,b){
+            let res = ((a*a) + (b*b));
+            document.write(`<h1> result = ${res} </h1>`);
+        }
+        exp1(2,4);
+
+        //a2 + b2 + c2 = (a + b + c)2 - 2ab - 2bc -2ca
+        function exp2(a,b,c){
+            let res1 = ((a + b + c) * (a + b + c) - (2 * a * b) - (2 * b * c) - (2 * c * a));
+            document.write(`<h1> result = ${res1} </h1>`);
+        }
+        exp2(2,3,2);
+    </script>
+</body>
+</html>
+
+<!-- function => it is a set of a code that performs specific task -->
+<!-- undefined => variable declare without a value (ex: var x;) -->
+<!-- emapty => variable declare with a empty value (ex: var x = "";) -->
+<!-- null => when variable declared with null value it means variable has no value (ex: var x = null;) -->

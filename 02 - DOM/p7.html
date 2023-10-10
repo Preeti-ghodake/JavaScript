@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document.cookie</h1>
+
+    <h1 id="result"></h1>
+
+    <button onclick="set()">Set Cookie</button>
+    <button onclick="clearHandler()">Clear Cookie</button>
+
+    <script>
+        function set() {
+            var x = prompt('Enter your input?');
+            document.cookie = `userId=${x};expires=8 AUG 2023 12:00:00 AM GMT+5.30`;
+            alert("cookie successfully set");
+            window.location.reload(); // refreshing current page
+        }
+
+        //reset cookie
+        function clearHandler() {
+            if(confirm(`Are you sure to clear cookie?`)) {
+                let myTime = new Date();
+
+                myTime.setTime(myTime.getTime()-1);
+                console.log('myTime', myTime.toGMTString());
+
+                document.cookie = `userId=;expires=${myTime.toGMTString()}`;
+                alert('Cookie cleared successfully');
+                window.location.reload(); //page refresh current active page
+            } else {
+                console.log('failed');
+            }
+        }
+
+        //self trigger function
+        (function(){
+            console.log(document.cookie); //string
+            let res = document.cookie.split("="); //break string into array
+            console.log('res =', res);
+            console.log('res[0] =', res[0]);
+            console.log('res[1] =', res[1]);
+            document.getElementById('result').innerText = `key = ${res[0]} and value = ${res[1]}`;
+        })();
+    </script>
+</body>
+</html>

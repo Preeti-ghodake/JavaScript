@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border: none;
+            width: 100%;
+
+        }
+
+        td,
+        th {
+            border: 1px solid #000;
+            padding: 10px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        th {
+            /* background: rgb(93, 8, 204); */
+            background-color: crimson;
+            color: #fff;
+        }
+        img {
+            height: 50px;
+            width: 80px;
+            /* margin-top: 10px; */
+            z-index: -2;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>DiscountPercentage</th>
+            <th>Rating</th>
+            <th>Stock</th>
+            <th>Brand</th>
+            <th>Category</th>
+        </tr>
+        <tbody id="products"></tbody>
+    </table>
+
+    <script>
+        fetch(`https://dummyjson.com/products`)
+        .then(response => response.json())
+    .then(res => {
+        console.log('res = ',res)
+        console.log("result", res)
+        print(res.products);
+        for(let key in res){
+            console.log(key)
+        }
+    })
+    .catch(err => console.log(err.message));
+    let container = document.querySelector("#products");
+
+    function print(data) {
+        data.forEach(val => {
+            console.log(data.items);
+
+            let card = document.createElement('tr');
+            let eId = document.createElement('td');
+            let eImage = document.createElement('img');
+                let eTitle = document.createElement('td');
+                let eDiscription = document.createElement('td');
+                let ePrice = document.createElement('td');
+                let eDiscountPercentage = document.createElement('td');
+                let eRating = document.createElement('td');
+                let eStock = document.createElement('td');
+                let eBrand = document.createElement('td');
+                let eCategory = document.createElement('td');
+                
+
+                // add contents / data to the element
+                eId.textContent =  val.id;
+                eImage.src = val.thumbnail;
+                eImage.alt = "No image";
+                eTitle.textContent = val.title;
+                eDiscription.textContent = val.description;
+                ePrice.textContent = val.price;
+                eDiscountPercentage.textContent =  val.discountPercentage + "%";
+                eRating.textContent = val.rating;
+                eStock.textContent = val.stock;
+                eBrand.textContent = val.brand;
+                eCategory.textContent = val.category;
+                
+
+                card.appendChild(eId)
+                card.appendChild(eImage);
+                card.appendChild(eTitle);
+                card.appendChild(eDiscription);
+                card.appendChild(ePrice);
+                card.appendChild(eDiscountPercentage);
+                card.appendChild(eRating);
+                card.appendChild(eStock);
+                card.appendChild(eBrand);
+                card.appendChild(eCategory);
+                
+                container.appendChild(card);
+        })
+    }
+
+    </script>
+</body>
+</html>

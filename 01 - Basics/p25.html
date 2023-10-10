@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Area of circle</h1>
+    <form onsubmit="submitHandler(event)" name="myform" method="post">
+        <div class="form-group">
+            <label for="in1">Enter radius value</label>
+            <input type="number" name="radius" id="radius" required>
+        </div>
+        <div class="form-group">
+            <!-- input type = "button" value = "calculate" class = "btn" onclick = "submitHandler()" -->
+            <input type="submit" value="Calculate" class="btn">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+
+    <div class="res" id="result"></div>
+
+    <script>
+        var radius = document.getElementById("radius");
+        var res = document.getElementById("result");
+
+            function submitHandler(event) {
+                event.preventDefault(); // avoid page refresh/reload
+                console.log('radius =', radius.value);
+                
+
+                var r = Number(radius.value);
+                
+                
+                var c = 3.142*r*r;
+
+                res.innerHTML = `<h1> area = ${c} </h1>`;
+            
+            }
+    </script>
+</body>
+</html>

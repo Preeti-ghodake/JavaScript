@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Parameterised Class</h3>
+
+    <script>
+        class Sum {
+            constructor(x,y) {
+                this.a = x;
+                this.b = y;
+            }
+
+            calculate(){
+                return this.a + this.b;
+            }
+        }
+
+        let s1 = new Sum(12,12);
+        let s2 = new Sum(10,20);
+
+        console.log('s1 =', s1);
+        console.log(`Sum s1 = ${s1.calculate()}`);
+
+        console.log('s2 =', s2);
+        console.log(`Sum s2 = ${s2.calculate()}`);
+
+        document.write(`<h3>Sum s1 = ${s1.calculate()} </h3>`);
+        document.write(`<h3>Sum s2 = ${s2.calculate()} </h3>`);
+    </script>
+
+    
+</body>
+</html>

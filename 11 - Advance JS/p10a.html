@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            overflow: hidden;
+            height: auto;
+            margin: 0;
+        }
+
+        #userInfo{
+            padding: 20px;
+            border: 2px solid #222;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            grid-gap: 10px;
+        }
+
+        #userInfo div{
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 20px;
+        }
+
+        #userInfo div h3{
+            text-transform: uppercase;
+            color: slateblue;
+        }
+
+        #userInfo div img{
+            border-radius: 10%;
+            object-fit: cover;
+            object-position: center;
+            width: 200px;
+        }
+
+        #userInfo div a{
+            padding: 12px 14px;
+            background-color: slateblue;
+            color: #fff;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>Fetch()</h3>
+    <section id="userInfo"></section>
+
+    <script>
+        
+
+            
+        fetch(`https://jsonplaceholder.typicode.com/users`)
+        //fetch(`https://dummyjson.com/products`)
+        .then(Response => Response.json())
+        .then(res => {
+            console.log('res =', res);
+            print(res);
+        })
+        .catch(err => console.log(err.message));
+
+        var container = document.querySelector("#userInfo");
+
+        
+
+            function print(data) {
+                data.forEach(val => {
+                //create html elements
+
+                let card = document.createElement('div');
+                //let eImage = document.createElement('img');
+                let eTitle = document.createElement('h3');
+                let eDiscription = document.createElement('h3');
+                let ePrice = document.createElement('p');
+                let eDiscountPercentage = document.createElement('p');
+                let eRating = document.createElement('p');
+                let eStock = document.createElement('p');
+                let eBrand = document.createElement('h3');
+                let eCategory = document.createElement('h3');
+                let eLink = document.createElement('a');
+
+
+                // add contents / data to the element
+                //eImage.src = val.thumbnail;
+                //eImage.alt = "No image";
+                eTitle.textContent = ` ${val.id} ${val.title} `;
+                eDiscription.textContent = val.description;
+                ePrice.textContent = "Price : " + val.price;
+                eDiscountPercentage.textContent =  "Discount % : " + val.discountPercentage;
+                eRating.textContent = "Rating : " + val.rating;
+                eStock.textContent = "Stock : " + val.stock;
+                eBrand.textContent = val.brand;
+                eCategory.textContent = val.category;
+                //eLink.href = val.thumbnail;
+                //eLink.textContent = "image link";
+                //eLink.target = "_blank";
+
+                //card.appendChild(eImage);
+                card.appendChild(eTitle);
+                card.appendChild(eDiscription);
+                card.appendChild(ePrice);
+                card.appendChild(eDiscountPercentage);
+                card.appendChild(eRating);
+                card.appendChild(eStock);
+                card.appendChild(eBrand);
+                card.appendChild(eCategory);
+                //card.appendChild(eLink);
+
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

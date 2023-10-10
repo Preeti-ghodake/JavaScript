@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Object property destructure using loop</h3>
+
+    <script>
+        const user = {
+            name: "Preeti",
+            email: "preeti@gmail.com",
+            mobile: "3214569875",
+            age:22
+        };
+
+        // for ... in
+        for(let item in user) { // here item is a key
+            document.write(`<h3> ${item} : ${ user[item] } </h3>`); //it is in string formate
+            //document.write(`<h3> ${item} : ${ user.item } </h3>`); //user.item ->it is not in string formate ->undefined
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

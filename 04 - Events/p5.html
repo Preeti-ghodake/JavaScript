@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt {
+            background-color: teal;
+            color: #fff;
+            padding: 12px;
+            width: 50%;
+            height: 500px;
+            overflow: auto;
+        }
+        h4{
+            padding: 10px;
+            background-color: crimson;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>onmousewheel() and onscroll() </h3>
+
+    <h4 id="output"></h4>
+    <div id="txt" onmousewheel="wheelHandler()" onscroll="wheelHandler()">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae asperiores quisquam repudiandae quasi maxime
+            facere! Dolorem dignissimos fuga vel sed ipsum corrupti dicta aperiam numquam id? Aspernatur fugit provident
+            placeat asperiores molestiae quas. Eum, vitae. Maxime aliquid quia neque ullam nemo hic minima repellendus,
+            fugiat, quisquam aperiam modi ea exercitationem enim iure magni aliquam dolore nam incidunt iste! Sint
+            deserunt maiores vero, nobis dolorum pariatur dicta minus molestias. Quam illo voluptatum delectus molestias
+            optio numquam molestiae doloremque nam commodi? Optio libero, iure nihil eius reiciendis, velit dignissimos
+            ad veritatis quas aut sed, amet numquam dolorum sit fugit quia deleniti? Nulla.Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Vitae asperiores quisquam repudiandae quasi maxime facere! Dolorem dignissimos
+            fuga vel sed ipsum corrupti dicta aperiam numquam id? Aspernatur fugit provident placeat asperiores
+            molestiae quas. Eum, vitae. Maxime aliquid quia neque ullam nemo hic minima repellendus, fugiat, quisquam
+            aperiam modi ea exercitationem enim iure magni aliquam dolore nam incidunt iste! Sint deserunt maiores vero,
+            nobis dolorum pariatur dicta minus molestias. Quam illo voluptatum delectus molestias optio numquam
+            molestiae doloremque nam commodi? Optio libero, iure nihil eius reiciendis, velit dignissimos ad veritatis
+            quas aut sed, amet numquam dolorum sit fugit quia deleniti? Nulla.
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae asperiores quisquam repudiandae quasi maxime
+            facere! Dolorem dignissimos fuga vel sed ipsum corrupti dicta aperiam numquam id? Aspernatur fugit provident
+            placeat asperiores molestiae quas. Eum, vitae. Maxime aliquid quia neque ullam nemo hic minima repellendus,
+            fugiat, quisquam aperiam modi ea exercitationem enim iure magni aliquam dolore nam incidunt iste! Sint
+            deserunt maiores vero, nobis dolorum pariatur dicta minus molestias. Quam illo voluptatum delectus molestias
+            optio numquam molestiae doloremque nam commodi? Optio libero, iure nihil eius reiciendis, velit dignissimos
+            ad veritatis quas aut sed, amet numquam dolorum sit fugit quia deleniti? Nulla.Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Vitae asperiores quisquam repudiandae quasi maxime facere! Dolorem dignissimos
+            fuga vel sed ipsum corrupti dicta aperiam numquam id? Aspernatur fugit provident placeat asperiores
+            molestiae quas. Eum, vitae. Maxime aliquid quia neque ullam nemo hic minima repellendus, fugiat, quisquam
+            aperiam modi ea exercitationem enim iure magni aliquam dolore nam incidunt iste! Sint deserunt maiores vero,
+            nobis dolorum pariatur dicta minus molestias. Quam illo voluptatum delectus molestias optio numquam
+            molestiae doloremque nam commodi? Optio libero, iure nihil eius reiciendis, velit dignissimos ad veritatis
+            quas aut sed, amet numquam dolorum sit fugit quia deleniti? Nulla.
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae asperiores quisquam repudiandae quasi maxime
+            facere! Dolorem dignissimos fuga vel sed ipsum corrupti dicta aperiam numquam id? Aspernatur fugit provident
+            placeat asperiores molestiae quas. Eum, vitae. Maxime aliquid quia neque ullam nemo hic minima repellendus,
+            fugiat, quisquam aperiam modi ea exercitationem enim iure magni aliquam dolore nam incidunt iste! Sint
+            deserunt maiores vero, nobis dolorum pariatur dicta minus molestias. Quam illo voluptatum delectus molestias
+            optio numquam molestiae doloremque nam commodi? Optio libero, iure nihil eius reiciendis, velit dignissimos
+            ad veritatis quas aut sed, amet numquam dolorum sit fugit quia deleniti? Nulla.Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Vitae asperiores quisquam repudiandae quasi maxime facere! Dolorem dignissimos
+            fuga vel sed ipsum corrupti dicta aperiam numquam id? Aspernatur fugit provident placeat asperiores
+            molestiae quas. Eum, vitae. Maxime aliquid quia neque ullam nemo hic minima repellendus, fugiat, quisquam
+            aperiam modi ea exercitationem enim iure magni aliquam dolore nam incidunt iste! Sint deserunt maiores vero,
+            nobis dolorum pariatur dicta minus molestias. Quam illo voluptatum delectus molestias optio numquam
+            molestiae doloremque nam commodi? Optio libero, iure nihil eius reiciendis, velit dignissimos ad veritatis
+            quas aut sed, amet numquam dolorum sit fugit quia deleniti? Nulla.
+        </p>
+    </div>
+
+    <script>
+        function wheelHandler() {
+            var pos = document.getElementById("txt");
+            document.getElementById("output").innerText = pos.scrollTop + " px";
+        }
+    </script>
+</body>
+
+</html>

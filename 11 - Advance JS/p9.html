@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            width: 100%;
+            overflow-x: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            grid-gap: 10px;
+        }
+        article{
+            background-color: crimson;
+            padding: 5px;
+            color: #eee;
+        }
+        article h4 {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <h3>Fetch()</h3>
+    <section id="block"></section>
+
+    <script>
+        // javascript promise constrctor
+        // 4 states
+        // 1. fullfilled
+        // 2. rejected
+        // 3. pending
+        // 4. settled
+
+        fetch(`https://jsonplaceholder.typicode.com/users`)
+        .then(Response => Response.json())
+        .then(res => {
+            console.log('res =', res);
+            print(res);
+        })
+        .catch(err => console.log(err.message));
+
+        let blk = document.querySelector("#block");
+
+            function print(data) {
+                data.forEach(item => {
+                    // create an html tags
+                    let article = document.createElement("article");
+                    
+                    let id = document.createElement('h1');
+                    let name = document.createElement("h2");
+                    let username = document.createElement("h2");
+                    let email = document.createElement("h3");
+                    let add = document.createElement("p");{
+                        let street = document.createElement("p");
+                        let suite = document.createElement("p");
+                        let city = document.createElement("p");
+                        let zipcode = document.createElement("p");
+                        let geo = document.createElement("p");{
+                            let lat = document.createElement("p");
+                            let lng = document.createElement("p");
+                        }
+                    }
+                    let phone = document.createElement("p");
+                    let web = document.createElement("p");
+                    let comp = document.createElement("p");
+                    {
+                        let cname = document.createElement("p");
+                        let catchp = document.createElement("p");
+                        let bs = document.createElement("p");
+                    }
+                    
+
+                    // add text content
+                    id.textContent = item.id;
+                    name.textContent = item.name;
+                    username.textContent = item.username;
+                    email.textContent = item.email;
+                    add.textContent = item.add;{
+                        street.textContent = item.street;
+                        suite.textContent = item.suite;
+                        city.textContent = item.city;
+                        zipcode.textContent = item.zipcode;
+                        geo.textContent = item.geo;{
+                            lat.textContent = item.lat;
+                            lng.textContent = item.lng;
+                        }
+                    }
+                    phone.textContent = item.phone;
+                    web.textContent = item.web;
+                    comp.textContent = item.comp;{
+                        cname.textContent = item.cname;
+                        catchp.textContent = item.catchp;
+                        bs.textContent = item.bs;
+                    }
+
+                    // appending to main node
+                    article.appendChild(id);
+                    article.appendChild(name);
+                    article.appendChild(username);
+                    article.appendChild(email);
+                    article.appendChild(add);{
+                        article.appendChild(street);
+                        article.appendChild(suite);
+                        article.appendChild(city);
+                        article.appendChild(zipcode);
+                        article.appendChild(geo);{
+                            article.appendChild(lat);
+                            article.appendChild(lng);
+                        }
+                    }
+                    article.appendChild(phone);
+                    article.appendChild(web);
+                    article.appendChild(comp);{
+                        article.appendChild(cname);
+                        article.appendChild(catchp);
+                        article.appendChild(bs);
+                    }
+                    
+                    blk.appendChild(article);
+                });
+            }
+    </script>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Array as constructor parameter</h3>
+
+    <script>
+        var y = new Array("Preeti", "Megha", "Sahana", "Sachin");
+
+        document.write(`<h3> ${y} </h3>`);
+        document.write(`<h3> ${y[2]} </h3>`);
+
+        var i = 0;
+        while( i < y.length) {
+            document.write(`<h2 style="color:red;">  ${y[i]} </h2>`);
+            i++;
+        };
+    </script>
+</body>
+</html>
+
+<!-- constructor => constructor is a method(function) of array which has same name of class 
+    inbuilt classes Array Number etc
+    class name start with capital 
+    new is keayword => it is used for creat a object of class
+-->

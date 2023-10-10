@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>function hoisting</h3>
+    <!-- in this function hoisting first we call the function then we write the definition -->
+    <!-- if we use const or expression we get error -> Uncaught referenceerror -->
+
+    <script>
+        sayHi();  // call
+
+        //definition
+        function sayHi() {
+            document.write(`<h1>Welcome to function hoisting</h1>`);
+        }
+
+
+        // expression
+        // const sayHi = () => {
+        //     document.write(`<h1>Welcome to arrow hoisting</h1>`);
+        // }
+
+        // Uncaught referenceerror: cannot access 'sayHi' before initilization
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>let and const over</h3>
+
+    <script>
+        if(10 < 40) {
+            const x = 120; // var => global scope variable, let and const => local scope / block scope variable
+            document.write(`<h1> Inside the block = ${x} </h1>`);
+        }
+
+        document.write(`<h1> Outside the block = ${x} </h1>`); // let and const => reference error
+    </script>
+</body>
+</html>

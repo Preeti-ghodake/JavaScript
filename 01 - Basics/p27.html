@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Data Type Conversions</h3>
+
+    <script>
+        var x = "123.345";
+        var y = '12345.6547896123';
+
+        var a = Number(x); //convert to any type into number
+        document.write(`<h3> Number = ${a} </h3>`);
+
+        var a1 = parseInt(x); //int value
+        document.write(`<h3> int = ${a1} </h3>`);
+
+        var a2 = parseFloat(x);
+        var a3 = parseFloat(y);
+
+        document.write(`<h3> float = ${a2} </h3>`);
+        document.write(`<h3> float = ${a3.toFixed(2)} </h3>`);
+
+    </script>
+</body>
+</html>
+
+    <!-- number => it take all numbers like int or float -->

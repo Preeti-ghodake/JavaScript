@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        #blk {
+            width: 100vw;
+            height: 400px;
+            background: teal;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section id="blk"></section>
+    <button onclick="addContent()"> Add Block</button>
+
+    <script>function addContent() {
+        var content = `<div>
+                <h1> Welcome to JS </h1>
+                <h3> Sub Title of Js </h3>
+                <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto consequuntur totam modi placeat tempore, blanditiis odio at porro, veniam, numquam eius perferendis atque voluptates molestiae corrupti? </p>
+                <button onclick="removecontent()" > Remove Block </button>
+            </div>`;
+
+            document.getElementById('blk').innerHTML = content;
+    }
+
+    function removecontent() {
+        document.getElementById('blk').innerHTML = "";
+    }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100% auto;
+            height: 100vh;
+            background-color: #ccc;
+        }
+
+        .blk {
+            width: 50%;
+            background-color: crimson;
+            color: #fff;
+            padding: 12px;
+        }
+    </style>
+
+    <!-- event => event ref as a parameter to the handler function -->
+</head>
+<body oncontextmenu="contextHandler(event)">
+    <h3>oncontextmenu()</h3>
+    <div class="blk" id="blk">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, atque aliquam expedita error tempore, quia sed voluptatibus, hic ut inventore provident asperiores ipsam eveniet totam! Quasi, placeat! Magni architecto reprehenderit tempore asperiores distinctio illum iste maxime vero, libero voluptatem ex animi sit repudiandae inventore facilis voluptates fuga iure molestias tempora! Error obcaecati soluta explicabo. Recusandae aliquam deserunt possimus similique? Blanditiis, quaerat ex! Suscipit, quos veritatis. Repellat non natus consectetur. Accusantium corrupti odit exercitationem, repellendus ex non eaque magni rem laudantium cum. Quas tenetur voluptate iure eius qui, dolore facere voluptatum in facilis adipisci, non ad aliquam a perspiciatis, voluptates ipsam?</p>
+    </div>
+
+    <script>
+        function contextHandler(event) {
+            event.preventDefault(); // avoid page refresh
+            alert("Right click has disabled")
+        }
+    </script>
+</body>
+</html>
